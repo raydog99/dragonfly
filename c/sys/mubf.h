@@ -32,6 +32,8 @@ struct mbuf{
 		} M_dat;
 };
 
+#define MGET(m, how, type)		((m) = m_get(how), (type))
+
 #define m_next 		m_hdr.mh_next
 #define m_len 		m_hdr.mh_len
 #define m_data 		m_hdr.mh_data
