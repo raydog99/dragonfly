@@ -32,7 +32,20 @@ struct mbuf{
 		} M_dat;
 };
 
-#define MGET(m, how, type)		((m) = m_get(how), (type))
+#define MGET(m, how, type){
+	// extend to out of zone alloc?
+	MALLOC((m), struct mbuf *, MSIZE, mbtypes[type], (how));
+	if (m){
+		(m) -> m_type = {type};
+		(m) -> m_next = (struct mbuf *) NULL;
+		(m) -> nextpkt = (struct mbuf *) NULL;
+		(m) -> m_data = (m) -> m_dat;
+		(m) -> m_flags = 0;
+	}
+	else {
+		(m) = m_retry((how), (type));
+	}
+}
 
 #define m_next 		m_hdr.mh_next
 #define m_len 		m_hdr.mh_len
