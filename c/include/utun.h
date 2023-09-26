@@ -18,9 +18,9 @@
 #define BUFLEN 100
 
 int open_utun(char *dev);
-int utun_read(char *buf, int len);
-int utun_write(char *buf, int len);
-static int set_if_up(char *dev, char *addr);
-void utun_init(char *dev, char *address);
+int utun_read(int utun_fd, char *buf, int len);
+int utun_write(int utun_fd, char *buf, int len);
+static int set_if_up(int utun_fd, char *dev, char *addr);
+int utun_init(char *dev, char *address);
 
 #endif
