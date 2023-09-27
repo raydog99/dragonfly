@@ -43,5 +43,6 @@ int main(void) {
       }
       struct eth_hdr *hdr = init_eth_hdr(buf);
       handle_frame(&netdev, hdr);
+      memset(buf, 0, sizeof(buf));
     }
 }
