@@ -24,4 +24,6 @@ struct iphdr {
     uint32_t daddr;					/* dst address */
 }__attribute__((packed));
 
+uint16_t checksum(void *addr, int count);
+
 #endif
