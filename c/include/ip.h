@@ -26,4 +26,8 @@ struct iphdr {
 
 uint16_t checksum(void *addr, int count);
 
+struct iphdr *ip_hdr(const char *buf){
+    return (struct iphdr *)(buf);
+}
+
 #endif
