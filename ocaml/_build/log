@@ -1,5 +1,0 @@
-# dune init project ocaml
-# OCAMLPARAM: unset
-# Shared cache: disabled
-# Workspace root: /Users/raymonddeng/Desktop/github/tcp-ip/ocaml
-# Auto-detected concurrency: 8

@@ -1,2 +1,3 @@
-# tcp-ip
-TCP/IP protocol in various languages
+# dragonfly
+
+Compositional verification of zero-knowledge circuits
